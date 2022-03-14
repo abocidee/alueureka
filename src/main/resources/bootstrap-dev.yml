@@ -1,8 +1,15 @@
 spring:
-  cloud:
-    config:
-#      url: 127.0.0.1:8888
-      url: 127.0.0.1:8888
-      name: eureka
-      label: master
-      profile: dev
+  application:
+    name: alu-eureka
+
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: 127.0.0.1
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: 127.0.0.1:8761/eureka

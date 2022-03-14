@@ -4,10 +4,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.alu</groupId>
-		<artifactId>itoken-dependencies</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../itoken-dependencies/</relativePath>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
 	</parent>
 
 	<artifactId>alu-eureka</artifactId>
@@ -15,6 +14,24 @@
 	<name>alu-eureka</name>
 	<!-- <url>http://www.funtl.com</url> -->
 	<!-- <inceptionYear>2018-NOW</inceptionYear> -->
+	<properties>
+		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+		<zipkin.version>2.10.1</zipkin.version>
+		<cloud-admin.version>2.0.1</cloud-admin.version>
+		<cloud-adminclient.version>2.0.1</cloud-adminclient.version>
+		<alibaba.druid.version>1.1.10</alibaba.druid.version>
+		<!-- environment setting -->
+		<mysql.version>8.0.13</mysql.version>
+		<tk.mybatis.version>2.0.2</tk.mybatis.version>
+		<pagehelper.version>1.2.5</pagehelper.version>
+		<lombok.version>1.18.0</lombok.version>
+		<guava.version>25.1-jre</guava.version>
+		<enkohtml.version>1.9.22</enkohtml.version>
+		<jackson.version>2.9.8</jackson.version>
+		<springfox.version>2.9.2</springfox.version>
+	</properties>
 
 
 	<dependencies>
@@ -29,6 +46,7 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<version>2.0.0.RELEASE</version>
 		</dependency>
 
        
@@ -51,35 +69,26 @@
             <artifactId>activation</artifactId>
             <version>1.1.1</version>
         </dependency>
-        
-<!--           	<dependency> -->
-<!--       <groupId>org.springframework</groupId> -->
-<!--       <artifactId>springloaded</artifactId> -->
-<!--       <version>1.2.8.RELEASE</version> -->
-<!--     </dependency> -->
-    
-<!--     <dependency> -->
-<!--       <groupId>org.springframework.boot</groupId> -->
-<!--       <artifactId>spring-boot-devtools</artifactId> -->
-<!--     </dependency> -->
-        
+
     <dependency>
   		<groupId>de.codecentric</groupId>
   		<artifactId>spring-boot-admin-starter-client</artifactId>
+		<version>${cloud-admin.version}</version>
   	</dependency>
-  	<dependency>
-  	    <groupId>org.springframework.cloud</groupId>
-  		<artifactId>spring-cloud-starter-zipkin</artifactId>
-  	</dependency>
+<!--  	<dependency>-->
+<!--  	    <groupId>org.springframework.cloud</groupId>-->
+<!--  		<artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--		<version>${zipkin.version}</version>-->
+<!--  	</dependency>-->
   	<dependency>
   		<groupId>org.jolokia</groupId>
   		<artifactId>jolokia-core</artifactId>
   	</dependency>
   	
-  		<dependency>
-  	  <groupId>org.springframework.cloud</groupId>
-  	  <artifactId>spring-cloud-starter-config</artifactId>
-  	</dependency>
+<!--  		<dependency>-->
+<!--  	  <groupId>org.springframework.cloud</groupId>-->
+<!--  	  <artifactId>spring-cloud-starter-config</artifactId>-->
+<!--  	</dependency>-->
 	</dependencies>
 
 	<build>
@@ -88,6 +97,7 @@
 				<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-maven-plugin -->
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>2.6.4</version>
 				<configuration>
 					<mainClass>com.alu.itoken.eureka.EurekaApplication</mainClass>
 				</configuration>
